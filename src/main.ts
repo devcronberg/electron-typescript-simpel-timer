@@ -25,18 +25,21 @@ function createWindow() {
       submenu: [
         {
           label: "Indstillinger",
+          accelerator: "CmdOrCtrl+I",
           click() {
             mainWindow.webContents.send("menu", { type: "indstillinger" });
           }
         },
         {
           label: "Reload",
+          accelerator: "CmdOrCtrl+R",
           click() {
             mainWindow.reload();
           }
         },
         {
           label: "DevTools",
+          accelerator: "CmdOrCtrl+D",
           click() {
             mainWindow.maximize();
             mainWindow.webContents.openDevTools();
@@ -45,6 +48,7 @@ function createWindow() {
         { type: "separator" },
         {
           label: "Exit",
+          accelerator: "CmdOrCtrl+X",
           click() {
             app.quit();
           }
