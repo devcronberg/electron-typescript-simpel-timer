@@ -26,6 +26,12 @@ const setup = () => {
     }
   });
 
+  $("#tid").keyup(e => {
+    if (e.keyCode === 13) {
+      $("#gem").trigger("click");
+    }
+  });
+
   $("#gem").click(() => {
     indstillinger.tid = parseInt(
       $("#tid")
@@ -48,11 +54,11 @@ const mainLoop = () => {
     const diffsekunder = parseInt(moment.utc(diff).format("s"), 10);
 
     if (diffminutter < 3) {
-      $("body").css("animation-name", "colorYellow");
+      $("body").css("animation-name", "colorWarning");
     }
 
     if (diffminutter < 1) {
-      $("body").css("animation-name", "colorRed");
+      $("body").css("animation-name", "colorClose");
       if (diffsekunder < 1) {
         $("body").css("animation-name", "colorDone");
       }

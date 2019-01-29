@@ -7,8 +7,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "run": "electron ./dist/main.js",
-    "start": "run-p watch run",
+    "electron": "electron ./dist/main.js",
+    "start": "run-p watch electron",
     "preinstall": "npm i -g tslint && npm i -g typescript"
   },
   "keywords": [],
