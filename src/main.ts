@@ -17,14 +17,6 @@ function createWindow() {
     autoHideMenuBar : true
   });
   
-  globalShortcut.register('f5', function() {    
-    mainWindow.reload()
-})
-globalShortcut.register('CommandOrControl+R', function() {    
-    mainWindow.reload()
-})
-
-  // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
   var menu = Menu.buildFromTemplate([
@@ -36,6 +28,12 @@ globalShortcut.register('CommandOrControl+R', function() {
                 click(){
                     
                     mainWindow.webContents.send("menu", { type: "indstillinger"});
+                }
+            },       
+            {
+                label:'Reload',
+                click(){                    
+                    mainWindow.reload();
                 }
             },            
             {

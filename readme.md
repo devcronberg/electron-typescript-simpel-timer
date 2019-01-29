@@ -6,4 +6,4 @@ Brug som:
 - Clone repository (eller hent zip og pak ud)
 - Fra kommandoprompt - kør "npm install"
 - Fra kommandoprompt - kør "npm start"
-- For at få menu fra i app klik på "alt"
+- For at få menu frem i app klik på "alt"
