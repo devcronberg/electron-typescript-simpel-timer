@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, ipcMain, globalShortcut   } from "electron"
+import { app, BrowserWindow, Menu, ipcMain, globalShortcut } from "electron";
 import * as path from "path";
 
 let mainWindow: Electron.BrowserWindow;
@@ -8,58 +8,54 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     height: 180,
-    width: 370,    
-    alwaysOnTop : !developMode,
-    skipTaskbar : !developMode,    
-    resizable : developMode,
+    width: 370,
+    alwaysOnTop: !developMode,
+    skipTaskbar: !developMode,
+    resizable: developMode,
     minimizable: developMode,
     maximizable: developMode,
-    autoHideMenuBar : true
+    autoHideMenuBar: true
   });
-  
+
   mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
   var menu = Menu.buildFromTemplate([
     {
-        label: 'Menu',
-        submenu: [
-            {
-                label:'Indstillinger',
-                click(){
-                    
-                    mainWindow.webContents.send("menu", { type: "indstillinger"});
-                }
-            },       
-            {
-                label:'Reload',
-                click(){                    
-                    mainWindow.reload();
-                }
-            },            
-            {
-                label:'DevTools',
-                click(){
-                    
-                    mainWindow.maximize();
-                    mainWindow.webContents.openDevTools();
-                }
-            },            
-            {type:'separator'},
-            {
-                label:'Exit',
-                click(){
-                    app.quit();
-                }
-            
-            }
-        ]
+      label: "Menu",
+      submenu: [
+        {
+          label: "Indstillinger",
+          click() {
+            mainWindow.webContents.send("menu", { type: "indstillinger" });
+          }
+        },
+        {
+          label: "Reload",
+          click() {
+            mainWindow.reload();
+          }
+        },
+        {
+          label: "DevTools",
+          click() {
+            mainWindow.maximize();
+            mainWindow.webContents.openDevTools();
+          }
+        },
+        { type: "separator" },
+        {
+          label: "Exit",
+          click() {
+            app.quit();
+          }
+        }
+      ]
     }
-])
-Menu.setApplicationMenu(menu); 
+  ]);
+  Menu.setApplicationMenu(menu);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
-
 
   // Emitted when the window is closed.
   mainWindow.on("closed", () => {

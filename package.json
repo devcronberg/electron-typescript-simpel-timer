@@ -7,7 +7,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && electron ./dist/main.js"
+    "start": "npm run build && electron ./dist/main.js",
+    "preinstall": "npm i -g tslint && npm i -g typescript"
   },
   "keywords": [],
   "author": "Michell Cronberg",
