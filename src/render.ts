@@ -3,7 +3,7 @@ import $ = require("jquery");
 import * as moment from "moment";
 import { Helper } from "./helper";
 
-const timerTid = 1;
+const timerTid = 15;
 const indstillinger: any = {};
 
 const setup = () => {
@@ -71,33 +71,13 @@ const mainLoop = () => {
       }
     } else {
       $("section#timer10 .value").text(moment.utc(diff).format("mm:ss"));
-      $("section#timer2  .value").text(
-        Helper.byteString(parseInt(moment.utc(diff).format("mm"), 10)) +
-          ":" +
-          Helper.byteString(parseInt(moment.utc(diff).format("ss"), 10))
-      );
+      $("section#timer2  .value").text(Helper.byteString(parseInt(moment.utc(diff).format("mm"), 10)) + ":" + Helper.byteString(parseInt(moment.utc(diff).format("ss"), 10)));
       $("section#timer16  .value").text(
-        Helper.pad(
-          Helper.hexString(parseInt(moment.utc(diff).format("mm"), 10)),
-          2
-        ) +
-          ":" +
-          Helper.pad(
-            Helper.hexString(parseInt(moment.utc(diff).format("ss"), 10)),
-            2
-          )
+        Helper.pad(Helper.hexString(parseInt(moment.utc(diff).format("mm"), 10)), 2) + ":" + Helper.pad(Helper.hexString(parseInt(moment.utc(diff).format("ss"), 10)), 2)
       );
 
       $("section#timer8 .value").text(
-        Helper.pad(
-          Helper.octalString(parseInt(moment.utc(diff).format("mm"), 10)),
-          2
-        ) +
-          ":" +
-          Helper.pad(
-            Helper.octalString(parseInt(moment.utc(diff).format("ss"), 10)),
-            2
-          )
+        Helper.pad(Helper.octalString(parseInt(moment.utc(diff).format("mm"), 10)), 2) + ":" + Helper.pad(Helper.octalString(parseInt(moment.utc(diff).format("ss"), 10)), 2)
       );
     }
   }, 1000);
