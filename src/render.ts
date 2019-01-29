@@ -1,5 +1,5 @@
 import { ipcRenderer, shell } from "electron";
-import $ = require("jquery");
+import * as $ from "jquery";
 import * as moment from "moment";
 import { Helper } from "./helper";
 
