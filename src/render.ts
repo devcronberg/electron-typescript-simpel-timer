@@ -25,7 +25,7 @@ setInterval(function() {
   }
 
   if (diff <= 0) {
-    if (indstillinger.beep===false) {
+    if (indstillinger.beep === false) {
       shell.beep();
       indstillinger.beep = true;
     }
