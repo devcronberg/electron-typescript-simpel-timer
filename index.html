@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cronbergs timer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <style>
+      body {
+        margin: 15px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-size: 20px;
+        background-color: white;
+        animation-name: colorWhite;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      section#timer10{
+        font-weight: bold;
+      }
+
+      section .text {
+        display: inline-block;
+        width: 100px;
+      }
+      section .value {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+      }
+
+      @keyframes colorWhite {
+        0% {
+          background-color: white;
+        }
+        100% {
+          background-color: white;
+        }
+      }
+
+      @keyframes colorYellow {
+        0% {
+          background-color: yellow;
+        }
+        50% {
+          background-color: gold;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+      @keyframes colorRed {
+        0% {
+          background-color: red;
+          color: white;
+        }
+        50% {
+          background-color: crimson;
+          color: white;
+        }
+        100% {
+          background-color: red;
+          color: white;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="timer16">
+      <span class="text">base 16</span> <span class="value"></span>
+    </section>
+    <section id="timer10">
+      <span class="text">base 10</span> <span class="value"></span>
+    </section>
+    <section id="timer8">
+      <span class="text">base 8</span> <span class="value"></span>
+    </section>
+    <section id="timer2">
+      <span class="text">base 2</span> <span class="value"></span>
+    </section>
+    <section id="indstillinger">
+      <input type="text" id="tid" /> <button id="gem">Gem</button>
+    </section>
+  </body>
+
+  <script>
+    require("./dist/render.js");
+  </script>
+</html>

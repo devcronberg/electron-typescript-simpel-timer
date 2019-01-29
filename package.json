@@ -1,0 +1,27 @@
+{
+  "name": "electron-simpel-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "Michell Cronberg",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.3.29",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^10.12.18",
+    "electron": "^4.0.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "moment": "^2.24.0"
+  }
+}
