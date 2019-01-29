@@ -1,8 +1,8 @@
-import { app, BrowserWindow, Menu, ipcMain, globalShortcut } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
 
 let mainWindow: Electron.BrowserWindow;
-let developMode = false;
+const developMode = false;
 
 function createWindow() {
   // Create the browser window.
@@ -19,7 +19,7 @@ function createWindow() {
 
   mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
-  var menu = Menu.buildFromTemplate([
+  const menu = Menu.buildFromTemplate([
     {
       label: "Menu",
       submenu: [
