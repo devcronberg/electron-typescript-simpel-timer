@@ -22,9 +22,12 @@ setInterval(function() {
 
   if (parseInt(moment.utc(diff).format("m")) < 1) {
     $("body").css("animation-name", "colorRed");
+    if (parseInt(moment.utc(diff).format("s")) < 1) {
+      $("body").css("animation-name", "colorDone");
+    }
   }
 
-  if (diff <= 0) {
+  if (diff < 0) {
     if (indstillinger.beep === false) {
       shell.beep();
       indstillinger.beep = true;

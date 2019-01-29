@@ -19,7 +19,7 @@
         animation-iteration-count: infinite;
       }
 
-      section#timer10{
+      section#timer10 {
         font-weight: bold;
       }
 
@@ -60,6 +60,21 @@
         }
         50% {
           background-color: crimson;
+          color: white;
+        }
+        100% {
+          background-color: red;
+          color: white;
+        }
+      }
+
+      @keyframes colorDone {
+        0% {
+          background-color: red;
+          color: white;
+        }
+        50% {
+          background-color: white;
           color: white;
         }
         100% {
